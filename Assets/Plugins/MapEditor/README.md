@@ -12,7 +12,7 @@ A unity map editor allow you to set grid node status.
 ## How to Use
 
 ### Step1.Drag MapEditor, SelectArea and MeshRoot prefab into hirearchy.
-![](img/01.png)
+![](https://github.com/jasonben677/MapEditor/blob/MapEditor/img/01.png)
 ### Step2.After you Drag MapEditor prefab into a scene, Don't forget right click it to choose Prefab -> Unpack Completely.
 ![](img/02.png)
 ### Step3.Check inspector of MapEditor has "Rectangle image" field, And drag or select SelectArea -> image to "Rectangle image" field of MapEditor. (which is a image help to draw a select area for rectangle)

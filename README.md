@@ -12,20 +12,20 @@ A unity map editor allow you to set grid node status.
 ## How to Use
 
 ### Step1.Drag MapEditor, SelectArea and MeshRoot prefab into hirearchy.
-![](http://192.168.1.139/lager-framework/unity_map_editor_dev/raw/upm_MapEditor/img/01.png)
+![](https://github.com/jasonben677/MapEditor/tree/main/Assets/Plugins/MapEditor/img/01.png)
 ### Step2.After you Drag MapEditor prefab into a scene, Don't forget right click it to choose Prefab -> Unpack Completely.
-![](http://192.168.1.139/lager-framework/unity_map_editor_dev/raw/upm_MapEditor/img/02.png)
+![](https://github.com/jasonben677/MapEditor/tree/main/Assets/Plugins/MapEditor/img/02.png)
 ### Step3.Check inspector of MapEditor has "Rectangle image" field, And drag or select SelectArea -> image to "Rectangle image" field of MapEditor. (which is a image help to draw a select area for rectangle)
-![](http://192.168.1.139/lager-framework/unity_map_editor_dev/raw/upm_MapEditor/img/03.png)
+![](https://github.com/jasonben677/MapEditor/tree/main/Assets/Plugins/MapEditor/img/03.png)
 ### Step4.Check inspector of MapEditor has "MeshRoot" field, And drag or select MeshRoot -> "MeshRoot" field of MapEditor. (draw grid on workarea)
-![](http://192.168.1.139/lager-framework/unity_map_editor_dev/raw/upm_MapEditor/img/04.png)
+![](https://github.com/jasonben677/MapEditor/tree/main/Assets/Plugins/MapEditor/img/04.png)
 ### Step5.Not in edit mode, there are two buttons
-![](http://192.168.1.139/lager-framework/unity_map_editor_dev/raw/upm_MapEditor/img/05.png)
+![](https://github.com/jasonben677/MapEditor/tree/main/Assets/Plugins/MapEditor/img/05.png)
 - Show all : show all grid.
 - Close all : close all grid.
 - When you have been click show all, remember click close all before enter edit mode.
 ### Step6.In MapEditor mode there are A, B, C will show in scene as follows.
-![](http://192.168.1.139/lager-framework/unity_map_editor_dev/raw/upm_MapEditor/img/07.png)
+![](https://github.com/jasonben677/MapEditor/tree/main/Assets/Plugins/MapEditor/img/07.png)
 - A : Select a tile by you to create before.
 - B : Tools can choose a tool to draw.
 - C : Map work area.
@@ -36,3 +36,6 @@ A unity map editor allow you to set grid node status.
 	- RAM : 16GB
 ## Reference
 - https://github.com/paullj/unity-tilemap
+
+## License
+- This library is under the MIT License.

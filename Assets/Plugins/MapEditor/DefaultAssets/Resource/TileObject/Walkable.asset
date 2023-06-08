@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9a3e1968d33c2a4db79626b10b4fcc5, type: 3}
+  m_Name: Walkable
+  m_EditorClassIdentifier: 
+  mat: {fileID: 2100000, guid: dc921580cbfd88147aaa6bacc816bc03, type: 2}
+  nodeType: 0

@@ -1,0 +1,12 @@
+{
+  "name": "com.XianBian.map-editor",
+  "displayName": "MapEditor",
+  "description": "The MapEditor is a development framework for drawing grid status",
+  "version": "1.7.1",
+  "unity": "2020.3",
+  "license": "MIT",
+  "dependencies": {},
+  "author": {
+    "name": "Jason Suen"
+  },
+}

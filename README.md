@@ -1,5 +1,5 @@
 # mapframe
-For A* pathFinding and grid setting
+For A* pathFinding,JPS and grid setting
 
 ## Quick Installnation:
 - Unity **2021LTS**

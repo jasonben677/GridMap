@@ -7,5 +7,5 @@ For A* pathFinding and grid setting
 - TextMeshPro **v3.0.6** or higher, you can install it via Package Manager.
 - Json.Net you can install it via AssetStore
 
-
-## Reference
+## License
+- This library is under the MIT License.

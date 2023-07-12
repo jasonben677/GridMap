@@ -133,8 +133,11 @@ namespace MapFrame
             {
                 float dx = _node.dx + this._round[i, 0];
                 float dy = _node.dy + this._round[i, 1];
+
+                if (!this.roadNodes.ContainsKey(dx + "_" + dy)) continue;
+
                 RoadNode nodeGet = this.roadNodes[dx + "_" + dy];
-                if (nodeGet != null && nodeGet != this.startNode && nodeGet.value != 1 && this.IsInCorner(nodeGet) == false && this.IsInCloseList(nodeGet) == false)
+                if (nodeGet != this.startNode && nodeGet.value != 1 && this.IsInCorner(nodeGet) == false && this.IsInCloseList(nodeGet) == false)
                 {
                     this.SetNodeF(nodeGet);
                 }

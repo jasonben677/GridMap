@@ -10,10 +10,6 @@ public class Mover : MonoBehaviour
     public bool isMove { get; private set; }
     public int nodeIndex { get; private set; }
 
-    private float speed;
-
-    private float timer = 0;
-
     // Update is called once per frame
     private void Update()
     {
@@ -23,7 +19,6 @@ public class Mover : MonoBehaviour
 
     public void SetMoveInfo(List<RoadNode> path, float speed)
     {
-        this.speed = speed;
         this.isMove = false;
 
         this.nodeIndex = 0;
@@ -42,7 +37,7 @@ public class Mover : MonoBehaviour
         float distanceX = nextNode.cx - this.transform.position.x;
         float distanceY = nextNode.cy - this.transform.position.y;
 
-        float speed = this.speed * dt;
+        float speed = MapManager.GetInstance().speed * dt;
     
         if (distanceX * distanceX + distanceY * distanceY > speed * speed)
         {

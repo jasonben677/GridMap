@@ -4,34 +4,25 @@ using UnityEngine;
 using MapFrame;
 using Newtonsoft.Json;
 
-public class MapManager : MonoBehaviour
+public class MapManager : SingletonBase<MapManager>
 {
-    [SerializeField] private TextAsset mapJson;
-    [SerializeField] private Mover mover;
+    [SerializeField] GameObject mapPrefab;
+    [SerializeField] GameObject characterPrefab;
 
-    [SerializeField] float speed;
+    public float speed;
 
-    public NormalMap normalMap { get; private set; }
+    public Mover character { get; private set; }
+
+    public ScenceInformation scenceInformation { get; private set; }
 
     public Camera cam { get; private set; }
 
 
-    private async void Awake()
+    private void Awake()
     {
-        this.cam = Camera.main;
-
-        this.normalMap = new NormalMap();
-        this.normalMap.mapData = JsonConvert.DeserializeObject<MapData>(mapJson.text);
-        await this.normalMap.SetGridData(this.normalMap.mapData);
-        this._SetMoverToOriginPos();
+        this._Initialize();
     }    
    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -50,15 +41,15 @@ public class MapManager : MonoBehaviour
 
         if (hits.Length > 0)
         {
-            RoadNode startNode = this.normalMap.GetNodeFromWorld(this.mover.transform.position.x, this.mover.transform.position.y);
-            RoadNode target = this.normalMap.GetNodeFromWorld(hits[0].point.x, hits[0].point.y);
+            RoadNode startNode = this.scenceInformation.normalMap.GetNodeFromWorld(this.character.transform.position.x, this.character.transform.position.y);
+            RoadNode target = this.scenceInformation.normalMap.GetNodeFromWorld(hits[0].point.x, hits[0].point.y);
 
             Debug.LogWarning(string.Format("start : {0},{1}", startNode.dx, startNode.dy));
             Debug.LogWarning(string.Format("target : {0},{1}", target.dx, target.dy));
 
-            List<RoadNode> path = this.normalMap.astarTypeUse.SeekPath(startNode, target);
+            List<RoadNode> path = this.scenceInformation.normalMap.astarTypeUse.SeekPath(startNode, target);
 
-            this.mover.SetMoveInfo(path, this.speed);
+            this.character.SetMoveInfo(path, this.speed);
         }
         else
         {
@@ -68,11 +59,28 @@ public class MapManager : MonoBehaviour
     }
 
 
+
+    private async void _Initialize()
+    {
+        GetInstance();
+
+        this.cam = Camera.main;
+
+        // 設定地圖
+        this.scenceInformation = Instantiate(this.mapPrefab).GetComponent<ScenceInformation>();
+        await this.scenceInformation.LoadScenceInformation();
+        
+        // 設定角色
+        this.character = Instantiate(this.characterPrefab).GetComponent<Mover>();
+        this._SetMoverToOriginPos();
+    }
+
+
     private void _SetMoverToOriginPos() 
     {
-        RoadNode roadNode = this.normalMap.GetNodeFromGrid(0, 0);
+        RoadNode roadNode = this.scenceInformation.normalMap.GetNodeFromGrid(0, 0);
 
-        this.mover.transform.position = new Vector2(roadNode.cx, roadNode.cy);
+        this.character.transform.position = new Vector2(roadNode.cx, roadNode.cy);
     }
 
 }

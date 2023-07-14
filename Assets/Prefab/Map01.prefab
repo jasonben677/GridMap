@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8317727791653208034}
   - component: {fileID: 7505677762095294163}
+  - component: {fileID: 8602082882780509661}
   m_Layer: 0
   m_Name: Map01
   m_TagString: Untagged
@@ -59,6 +60,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 12.8, y: 6.4}
   m_EdgeRadius: 0
+--- !u!114 &8602082882780509661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5292032176303634528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d2d6b90a13a89b4db369196c357b4e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapInformationJson: {fileID: 4900000, guid: 87d57e285b322b24ea29050551891aab, type: 3}
+  pathFindingMap: 1
 --- !u!1 &7519600278343642636
 GameObject:
   m_ObjectHideFlags: 0
@@ -70,7 +85,7 @@ GameObject:
   - component: {fileID: 3608366829232505324}
   - component: {fileID: 6644338983801193246}
   m_Layer: 0
-  m_Name: map01
+  m_Name: sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

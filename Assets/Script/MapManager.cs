@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using MapFrame;
 using Newtonsoft.Json;
+using UnityEditor;
 
 public class MapManager : SingletonBase<MapManager>
 {
-    [SerializeField] GameObject mapPrefab;
-    [SerializeField] GameObject characterPrefab;
-
     public float speed;
 
     public Mover character { get; private set; }
@@ -66,12 +64,14 @@ public class MapManager : SingletonBase<MapManager>
 
         this.cam = Camera.main;
 
-        // 設定地圖
-        this.scenceInformation = Instantiate(this.mapPrefab).GetComponent<ScenceInformation>();
+        // 設定地圖     
+        ScenceInformation map = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefab/Map01.prefab").GetComponent<ScenceInformation>();
+        this.scenceInformation = Instantiate(map);
         await this.scenceInformation.LoadScenceInformation();
-        
+
         // 設定角色
-        this.character = Instantiate(this.characterPrefab).GetComponent<Mover>();
+        Mover mover = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefab/Mover.prefab").GetComponent<Mover>();
+        this.character = Instantiate(mover);
         this._SetMoverToOriginPos();
     }
 

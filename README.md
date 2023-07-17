@@ -13,5 +13,5 @@
 - 內容都在Assets\Scence\AstarScence中，點擊Play即可運作
 
 ## 參考
-- https://github.com/michael811125/FlappyBird_OxGFrame(參考單例建立方式)
+- 參考單例建立方式 : https://github.com/michael811125/FlappyBird_OxGFrame
 
